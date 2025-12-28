@@ -3,16 +3,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.healthymenu.MainController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <TableView layoutX="183.0" layoutY="-2.0" prefHeight="196.0" prefWidth="599.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="tableFood" layoutX="183.0" layoutY="-2.0" prefHeight="196.0" prefWidth="599.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn prefWidth="197.59997862577438" text="Food Name" />
-                <TableColumn prefWidth="152.00001525878906" text="Food Category" />
-                  <TableColumn minWidth="0.0" prefWidth="125.0" text=" Weight (g)" />
-                  <TableColumn prefWidth="125.99996948242188" text=" Weight (oz)" />
+                <TableColumn fx:id="colFoodName" prefWidth="197.59997862577438" text="Food Name" />
+                <TableColumn fx:id="colFoodCategory" prefWidth="152.00001525878906" text="Food Category" />
+                  <TableColumn fx:id="colFoodWeighG" minWidth="0.0" prefWidth="125.0" text=" Weight (g)" />
+                  <TableColumn fx:id="colFoodWeighOz" prefWidth="125.99996948242188" text=" Weight (oz)" />
               </columns>
             </TableView>
          </children></AnchorPane>
@@ -23,20 +23,20 @@
                   <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" spacing="35.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label maxWidth="1.7976931348623157E308" text="Food Name" HBox.hgrow="ALWAYS" />
-                        <TextField maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtFoodName" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
                         <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Add" textAlignment="CENTER" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" spacing="20.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Food Category" HBox.hgrow="ALWAYS" />
-                        <ChoiceBox maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                        <ChoiceBox fx:id="comboCategory" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                   <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" spacing="30.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Food Weight" />
-                        <TextField maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="txtWeight" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
