@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MainController implements Initializable {
@@ -62,6 +63,9 @@ public class MainController implements Initializable {
 
     food = FXCollections.observableArrayList(foodService.loadFood());
     tableFood.setItems(food);
+
+    // Add double-click delete functionality
+    tableFood.setOnMouseClicked(this::handleTableDoubleClick);
   }
 
   public void addFood(ActionEvent actionEvent) {
@@ -80,6 +84,20 @@ public class MainController implements Initializable {
                         (String) comboCategory.getSelectionModel().getSelectedItem(),
                         Integer.parseInt(txtWeight.getText())));
       foodService.saveFood(food);
+    }
+  }
+
+  /**
+   * Handles double-click events on the food table.
+   * Deletes the selected food item when double-clicked.
+   */
+  private void handleTableDoubleClick(MouseEvent event) {
+    if (event.getClickCount() == 2) {
+      Food selectedFood = tableFood.getSelectionModel().getSelectedItem();
+      if (selectedFood != null) {
+        food.remove(selectedFood);
+        foodService.saveFood(food);
+      }
     }
   }
 
