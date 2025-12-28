@@ -31,6 +31,7 @@
                      <children>
                         <Label text="Food Category" HBox.hgrow="ALWAYS" />
                         <ChoiceBox fx:id="comboCategory" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#goToChartView" text="Chart" />
                      </children>
                   </HBox>
                   <HBox maxWidth="1.7976931348623157E308" minWidth="-Infinity" spacing="30.0" VBox.vgrow="ALWAYS">
