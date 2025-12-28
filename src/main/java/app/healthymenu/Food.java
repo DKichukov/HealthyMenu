@@ -43,4 +43,9 @@ public class Food {
     df.setMaximumFractionDigits(2);
     return df.format(weight * 0.035274f);
   }
+
+  @Override
+  public String toString() {
+    return name + "; " + category + "; " + weight;
+  }
 }
